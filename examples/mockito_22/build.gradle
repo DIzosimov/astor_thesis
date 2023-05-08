@@ -59,6 +59,7 @@ dependencies {
     testRuntime fileTree("lib/compile")
 
     testUtil sourceSets.test.output
+    implementation 'com.gzoltar:gzoltar:1.7.3' // You can use the latest version available
 }
 
 // Configure VCS in generated IPR file

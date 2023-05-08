@@ -127,8 +127,8 @@
 
 		<dependency>
 			<groupId>com.gzoltar</groupId>
-			<artifactId>gzoltar</artifactId>
-			<version>0.1.1</version>
+			<artifactId>com.gzoltar.agent</artifactId>
+			<version>1.7.3</version>
 		</dependency>
 
 
@@ -158,6 +158,12 @@
 			<version>2.8.2</version>
 			<scope>compile</scope>
 		</dependency>
+
+		<dependency>
+    <groupId>com.google.guava</groupId>
+    <artifactId>guava</artifactId>
+    <version>30.1-jre</version>
+</dependency>
 
 	</dependencies>
 
@@ -341,6 +347,11 @@
 				</executions>
 			</plugin>
 
+			<plugin>
+				<groupId>org.codehaus.mojo</groupId>
+				<artifactId>build-helper-maven-plugin</artifactId>
+				<version>3.0.0</version>
+			</plugin>
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-surefire-plugin</artifactId>
