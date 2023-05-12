@@ -1,0 +1,22 @@
+{
+  "VARIANT_ID": "254",
+  "VALIDATION": "|true|0|1981|[]|",
+  "patchhunks": [
+    {
+      "LOCATION": "org.apache.commons.math.analysis.solvers.UnivariateRealSolverUtils",
+      "PATH": "\\/Users\\/davve\\/coding\\/uni\\/thesis\\/astor\\/examples\\/Math-issue-280\\/src\\/java\\/org\\/apache\\/commons\\/math\\/analysis\\/solvers\\/UnivariateRealSolverUtils.java",
+      "INGREDIENT_SCOPE": "-",
+      "ORIGINAL_CODE": "\\/\\/ FIX mm 280\\n\\/\\/ if (fa * fb \u003e 0.0 ) {\\nthrow new org.apache.commons.math.ConvergenceException(\\n\\\"number of iterations\u003d{0}, maximum iterations\u003d{1}, \\\" + \\n(\\\"initial\u003d{2}, lower bound\u003d{3}, upper bound\u003d{4}, final a value\u003d{5}, \\\" + \\n\\\"final b value\u003d{6}, f(a)\u003d{7}, f(b)\u003d{8}\\\"), \\nnumIterations, maximumIterations, initial, \\nlowerBound, upperBound, a, b, fa, fb)",
+      "BUGGY_CODE_TYPE": "CtThrowImpl|CtBlockImpl",
+      "OPERATOR": "RemoveOp",
+      "MODIFIED_FILE_PATH": "\\/Users\\/davve\\/coding\\/uni\\/thesis\\/astor\\/.\\/output_astor\\/AstorMain-Math-issue-280\\/\\/src\\/\\/variant-254\\/org\\/apache\\/commons\\/math\\/analysis\\/solvers\\/UnivariateRealSolverUtils.java",
+      "LINE": "201",
+      "SUSPICIOUNESS": "1",
+      "MP_RANKING": "3"
+    }
+  ],
+  "TIME": "116",
+  "GENERATION": "127",
+  "FOLDER_SOLUTION_CODE": "\\/Users\\/davve\\/coding\\/uni\\/thesis\\/astor\\/.\\/output_astor\\/AstorMain-Math-issue-280\\/\\/src\\/\\/variant-254",
+  "PATCH_DIFF_ORIG": "--- \\/src\\/java\\/org\\/apache\\/commons\\/math\\/analysis\\/solvers\\/UnivariateRealSolverUtils.java\\n+++ \\/src\\/java\\/org\\/apache\\/commons\\/math\\/analysis\\/solvers\\/UnivariateRealSolverUtils.java\\n@@ -199,8 +199,8 @@\\n-\\t\\t\\t\\/\\/ FIX mm 280\\n-\\t\\t\\t\\/\\/ if (fa * fb \u003e 0.0 ) {\\n-\\t\\t\\tthrow new org.apache.commons.math.ConvergenceException(\\n-\\t\\t\\t\\\"number of iterations\u003d{0}, maximum iterations\u003d{1}, \\\" + \\n-\\t\\t\\t(\\\"initial\u003d{2}, lower bound\u003d{3}, upper bound\u003d{4}, final a value\u003d{5}, \\\" + \\n-\\t\\t\\t\\\"final b value\u003d{6}, f(a)\u003d{7}, f(b)\u003d{8}\\\"), \\n-\\t\\t\\tnumIterations, maximumIterations, initial, \\n-\\t\\t\\tlowerBound, upperBound, a, b, fa, fb);\\n+\\n+\\n+\\n+\\n+\\n+\\n+\\n+\\n\\n"
+}

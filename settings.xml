@@ -35,6 +35,17 @@
                         <enabled>false</enabled>
                     </snapshots>
                 </repository>
+                <!-- Add gzoltar.core repository -->
+                <repository>
+                    <id>gzoltar</id>
+                    <url>https://repo.gzoltar.com/nexus/content/repositories/releases/</url>
+                    <releases>
+                        <enabled>true</enabled>
+                    </releases>
+                    <snapshots>
+                        <enabled>false</enabled>
+                    </snapshots>
+                </repository>
             </repositories>
             <pluginRepositories>
                 <pluginRepository>

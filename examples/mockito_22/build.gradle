@@ -60,6 +60,7 @@ dependencies {
 
     testUtil sourceSets.test.output
     implementation 'com.gzoltar:gzoltar:1.7.3' // You can use the latest version available
+    implementation 'com.gzoltar:gzoltar-core:1.7.3'
 }
 
 // Configure VCS in generated IPR file

@@ -90,8 +90,8 @@
   <property name="compile.optimize"        value="true"/>
     
   <!-- JDK level -->
-  <property name="compile.source"          value="1.5"/>
-  <property name="compile.target"          value="1.5"/>
+  <property name="compile.source"          value="1.6"/>
+  <property name="compile.target"          value="1.6"/>
 
   <!-- Base compile classpath -->
   <path id="compile.classpath">
