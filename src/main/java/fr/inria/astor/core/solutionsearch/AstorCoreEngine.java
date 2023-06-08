@@ -553,7 +553,7 @@ public abstract class AstorCoreEngine implements AstorExtensionPoint {
 			currentStat.increment(GeneralStatEnum.NR_RIGHT_COMPILATIONS);
 
 			VariantValidationResult validationResult = validateInstance(programVariant);
-			double fitness = this.fitnessFunction.calculateFitnessValue(validationResult);
+			double fitness = this.fitnessFunction.calculateFitnessValue(programVariant, validationResult);
 			programVariant.setFitness(fitness);
 
 			log.debug("-Valid?: " + validationResult + ", fitness " + programVariant.getFitness());
@@ -856,7 +856,7 @@ public abstract class AstorCoreEngine implements AstorExtensionPoint {
 			throw new IllegalStateException("The application under repair has not failling test cases");
 		}
 
-		double fitness = this.fitnessFunction.calculateFitnessValue(validationResult);
+		double fitness = this.fitnessFunction.calculateFitnessValue(originalVariant, validationResult);
 		originalVariant.setFitness(fitness);
 
 		log.info("The original fitness is : " + fitness);
