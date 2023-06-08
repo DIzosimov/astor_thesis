@@ -1,5 +1,6 @@
 package fr.inria.astor.core.solutionsearch.population;
 
+import fr.inria.astor.core.entities.ProgramVariant;
 import fr.inria.astor.core.entities.validation.VariantValidationResult;
 import fr.inria.astor.core.solutionsearch.extension.AstorExtensionPoint;
 
@@ -10,9 +11,10 @@ import fr.inria.astor.core.solutionsearch.extension.AstorExtensionPoint;
  *
  */
 public interface FitnessFunction extends  AstorExtensionPoint {
-
 	
 	public double calculateFitnessValue(VariantValidationResult validationResult);
+
+	public double calculateFitnessValue(ProgramVariant variant, VariantValidationResult validationResult);
 
 	
 	public double getWorstMaxFitnessValue();
