@@ -2,6 +2,7 @@ package fr.inria.astor.core.solutionsearch.population;
 
 import fr.inria.astor.core.entities.validation.TestCaseVariantValidationResult;
 import fr.inria.astor.core.entities.validation.VariantValidationResult;
+import fr.inria.astor.core.entities.ProgramVariant;
 
 /**
  * Fitness function based on test suite execution.
@@ -10,23 +11,40 @@ import fr.inria.astor.core.entities.validation.VariantValidationResult;
  *
  */
 public class TestCaseFitnessFunction implements FitnessFunction {
+    private static final double EDIT_PENALTY = 0.01;
 
-	/**
-	 * In this case the fitness value is associate to the failures: LESS FITNESS
-	 * is better.
-	 */
-	public double calculateFitnessValue(VariantValidationResult validationResult) {
+    /**
+     * In this case the fitness value is associate to the failures: LESS FITNESS
+     * is better.
+     */
+    public double calculateFitnessValue(VariantValidationResult validationResult) {
 
-		if (validationResult == null)
-			return this.getWorstMaxFitnessValue();
+        if (validationResult == null)
+            return this.getWorstMaxFitnessValue();
 
-		TestCaseVariantValidationResult result = (TestCaseVariantValidationResult) validationResult;
-		return result.getFailureCount();
-	}
+        TestCaseVariantValidationResult result = (TestCaseVariantValidationResult) validationResult;
+        return result.getFailureCount();
+    }
 
-	public double getWorstMaxFitnessValue() {
+    /**
+     * In this case the fitness value is associated with the amount of edits to the
+     * code that the solution required, the lower the score, the better.
+     * 
+     * @author David Izosimov & Mikael Esenbaev
+     * 
+     */
+    public double calculateFitnessValue(ProgramVariant variant, VariantValidationResult validationResult){
+            double fitness = calculateFitnessValue(validationResult);
 
-		return Double.MAX_VALUE;
-	}
+      int editCount = variant.getOperations().size();  // Assuming this method returns the number of edits
+      fitness += EDIT_PENALTY * editCount;
+
+      return fitness;
+    }
+
+    public double getWorstMaxFitnessValue() {
+
+        return Double.MAX_VALUE;
+    }
 
 }
